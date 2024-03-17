@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<title>Scallop</title>
+
+<link rel="stylesheet" th:href="@{/css/estilo.css}" />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}"> Scallop Produtos </a></li>
+
+				<li><a th:href="@{/produtos}"> Listar </a></li>
+
+				<li><a th:href="@{/produtos/novo}"> Novo </a></li>
+			</ul>
+		</nav>
+
+	</header>
+	
+	<main>
+		<section>
+			<h1>Lista produtos</h1>
+		</section>
+		
+		<section>
+			<table>
+				<thead>
+					<tr>	
+						<th>NomeProduto</th>
+						<th>ValorCompra</th>
+						<th>ValorVenda</th>
+						<th>Descricao</th>
+						<th>Quantidade</th>
+						<th>#</th>
+						<th>#</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="produto: ${produtos}">
+						<td th:text="${produto.nomeProduto}"></td>
+						<td th:text="${produto.valorCompra}"></td>
+						<td th:text="${produto.ValorVenda}"></td>
+						<td th:text="${produto.descricao}"></td>
+						<td th:text="${produto.quantidade}"></td>
+						
+						<td>
+							<a th:href="@{/produtos/{produto}/editar(produto=${produto.id})}">Editar</a>
+						</td>
+						
+						<td>
+							<form th:action="@{/produtos/{produto}(produto=${produto.id})}"
+								th:method="delete">
+								<button>Remover</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</body>
+
+</html>
