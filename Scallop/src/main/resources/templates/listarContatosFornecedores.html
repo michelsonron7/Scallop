@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width"/>
+
+<title>Scallop</title>
+
+<link rel="stylesheet" th:href="@{/css/estilo.css}" />
+
+</head>
+
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a th:href="@{/}"> Scallop produtos </a></li>
+
+				<li><a th:href="@{/contatos/contatos}"> Scallop Contatos </a></li>
+
+				<li><a th:href="@{/contatos/novoFornecedores}"> Novo </a></li>
+			</ul>
+		</nav>
+
+	</header>
+	
+	<main>
+		<section>
+			<h1>Lista contatos Fornecedores</h1>
+		</section>
+		
+		<section>
+			<table>
+				<thead>
+					<tr>	
+						<th>Nome Fantasia</th>
+						<th>CNPJ</th>
+						<th>Endereco</th>
+						<th>Email</th>
+						<th>Site</th>
+						<th>Situação</th>
+						<th>Tempo Entrega</th>
+						<th>#</th>
+						<th>#</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="contato: ${contatos}">
+						<td th:text="${contato.nomeFantasia}"></td>
+						
+						<td th:text="${contato.cnpj}"></td>
+						
+						<td th:text="${contato.endereco}"></td>
+						
+						<td th:text="${contato.email}"></td>
+						
+						<td th:text="${contato.site}"></td>
+						
+						<td th:text="${contato.situacao}"></td>
+						
+						<td th:text="${contato.tempoEntrega}"></td>
+						
+						<td>
+							<a th:href="@{/contatos/{contato}/editar(contato=${contato.cnpj})}">Editar</a>
+						</td>
+						
+						<td>
+							<form th:action="@{/contatos/{contato}(contato=${contato.cnpj})}"
+								th:method="delete">
+								<button>Remover</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</body>
+
+</html>

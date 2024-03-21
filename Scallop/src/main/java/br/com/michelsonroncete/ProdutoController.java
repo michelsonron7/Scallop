@@ -1,4 +1,4 @@
-package controller;
+package br.com.michelsonroncete;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import entities.Produto;
 
 @Controller
 public class ProdutoController {

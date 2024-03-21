@@ -16,11 +16,10 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a th:href="@{/}"> Scallop Produtos </a></li>
+				<li><a th:href="@{/}"> Scallop </a></li>
 
 				<li><a th:href="@{/produtos}"> Listar </a></li>
-
-				<li><a th:href="@{/produtos/novo}"> Novo </a></li>
+				
 			</ul>
 		</nav>
 
@@ -30,7 +29,7 @@
 		<section>
 			<h1>Cadastro produtos</h1>
 		</section>
-
+			
 		<section>
 			<form th:action="${produto.novo} ? @{/produtos} : @{/produtos/{produto}(produto=${produto.id})}" 
 				th:object="${produto}" th:method="${produto.novo} ? post : put">

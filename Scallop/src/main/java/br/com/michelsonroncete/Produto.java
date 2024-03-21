@@ -1,4 +1,4 @@
-package entities;
+package br.com.michelsonroncete;
 
 import java.util.ArrayList;
 

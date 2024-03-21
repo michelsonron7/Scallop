@@ -1,6 +1,4 @@
-package entities;
-
-import java.util.ArrayList;
+package br.com.michelsonroncete;
 
 public class Fornecedor {
 
@@ -32,6 +30,10 @@ public class Fornecedor {
 		this.site = site;
 		this.situacao = situacao;
 		this.tempoEntrega = tempoEntrega;
+	}
+	
+	public boolean isNovo() {
+		return cnpj == null;
 	}
 
 	public String getNomeFantasia() {
@@ -90,20 +92,5 @@ public class Fornecedor {
 		this.tempoEntrega = tempoEntrega;
 	}
 	
-	public void cadastrar() {
-		
-	}
-	
-	public void alterar() {
-		
-	}
-	
-	public ArrayList<Produto> listar(){
-		return null;
-	}
-	
-	public void buscar() {
-		
-	}
 }	
 	
