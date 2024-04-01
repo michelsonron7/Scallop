@@ -1,6 +1,4 @@
-package br.com.michelsonroncete;
-
-import java.util.ArrayList;
+package entities;
 
 public class Produto {
 
@@ -22,7 +20,7 @@ public class Produto {
 
 	public Produto(String id, String nomeProduto, Double valorCompra, Double valorVenda, String descricao,
 			Integer quantidade) {
-		super();
+		
 		this.id = id;
 		this.nomeProduto = nomeProduto;
 		this.valorCompra = valorCompra;
@@ -83,19 +81,4 @@ public class Produto {
 		this.quantidade = quantidade;
 	}
 	
-	public void cadastrar() {
-		
-	}
-	
-	public void alterar() {
-		
-	}
-	
-	public ArrayList<Produto> listar(){
-		return null;
-	}
-	
-	public void buscar() {
-		
-	}
 }

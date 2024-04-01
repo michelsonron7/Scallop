@@ -1,4 +1,4 @@
-package br.com.michelsonroncete;
+package entities;
 
 public class Contato {
 

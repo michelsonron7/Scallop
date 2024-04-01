@@ -20,7 +20,7 @@
 				
 				<li><a th:href="@{/contatos/contatos}"> Scallop Contatos </a></li>
 
-				<li><a th:href="@{/contatos/contatos/fornecedores}"> Listar </a></li>
+				<li><a th:href="@{/fornecedores/contatosFornecedores}"> Listar </a></li>
 
 			</ul>
 		</nav>
@@ -33,55 +33,49 @@
 		</section>
 
 		<section>
-			<form th:action="${contato.novo} ? @{/contatos} : @{/contatos/{contato}(contato=${contato.cnpj})}" 
-				th:object="${contato}" th:method="${contato.novo} ? post : put">
+			<form th:action="${fornecedor.novo} ? @{/fornecedores} : @{/fornecedores/{fornecedor}(fornecedor=${fornecedor.id})}" 
+				th:object="${fornecedor}" th:method="${fornecedor.novo} ? post : put">
 				
-				<div th:if="${!contato.novo}">
-					<label>Código: </label> 
+				<div th:if="${!fornecedor.novo}">
+					<label>CNPJ: </label> 
 					
-					<input th:field="*{cnpj}" readonly="readonly" />
+					<input th:field="${id}" readonly="readonly" />
 				</div>
 				
 				<div>
 					<label>Nome Fantasia: </label> 
 					
-					<input th:field="*{nomeFantasia}" />
+					<input th:field="${nomeFantasia}" />
 				</div>
 
 				<div>
-					<label>CNPJ: </label> 
-					
-					<input th:field="*{cnpj}"/>
-				</div>
-				
-				<div>
 					<label>Endereço: </label> 
 					
-					<input th:field="*{endereco}"/>
+					<input th:field="${endereco}"/>
 				</div>
 				
 				<div>
 					<label>Email: </label> 
 					
-					<input th:field="*{email}"/>
+					<input th:field="${email}"/>
 				</div>
 				
 				<div>
 					<label>Site: </label> 
 					
-					<input th:field="*{site}"/>
+					<input th:field="${site}"/>
 				</div>
 				
 				<div>
 					<label>Situação: </label> 
 					
-					<input th:field="*{situacao}"/>
+					<input th:field="${situacao}"/>
 				</div>
 				
 				<div>
 					<label>Tempo Entrega: </label> 
 					
-					<input th:field="*{tempoEntrega}"/>
+					<input th:field="${tempoEntrega}"/>
 				</div>
 
 				<div>

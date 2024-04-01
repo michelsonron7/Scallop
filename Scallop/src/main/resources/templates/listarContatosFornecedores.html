@@ -21,7 +21,7 @@
 
 				<li><a th:href="@{/contatos/contatos}"> Scallop Contatos </a></li>
 
-				<li><a th:href="@{/contatos/novoFornecedores}"> Novo </a></li>
+				<li><a th:href="@{/fornecedores/novo}"> Novo </a></li>
 			</ul>
 		</nav>
 
@@ -37,7 +37,6 @@
 				<thead>
 					<tr>	
 						<th>Nome Fantasia</th>
-						<th>CNPJ</th>
 						<th>Endereco</th>
 						<th>Email</th>
 						<th>Site</th>
@@ -49,27 +48,25 @@
 				</thead>
 				
 				<tbody>
-					<tr th:each="contato: ${contatos}">
-						<td th:text="${contato.nomeFantasia}"></td>
+					<tr th:each="fornecedor: ${fornecedores}">
+						<td th:text="${fornecedor.nomeFantasia}"></td>
 						
-						<td th:text="${contato.cnpj}"></td>
+						<td th:text="${fornecedor.endereco}"></td>
 						
-						<td th:text="${contato.endereco}"></td>
+						<td th:text="${fornecedor.email}"></td>
 						
-						<td th:text="${contato.email}"></td>
+						<td th:text="${fornecedor.site}"></td>
 						
-						<td th:text="${contato.site}"></td>
+						<td th:text="${fornecedor.situacao}"></td>
 						
-						<td th:text="${contato.situacao}"></td>
-						
-						<td th:text="${contato.tempoEntrega}"></td>
+						<td th:text="${fornecedor.tempoEntrega}"></td>
 						
 						<td>
-							<a th:href="@{/contatos/{contato}/editar(contato=${contato.cnpj})}">Editar</a>
+							<a th:href="@{/fornecedores/{fornecedor}/editar(fornecedor=${fornecedor.id})}">Editar</a>
 						</td>
 						
 						<td>
-							<form th:action="@{/contatos/{contato}(contato=${contato.cnpj})}"
+							<form th:action="@{/fornecedores/{fornecedor}(fornecedor=${fornecedor.id})}"
 								th:method="delete">
 								<button>Remover</button>
 							</form>

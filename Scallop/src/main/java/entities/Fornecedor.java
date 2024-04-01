@@ -1,10 +1,10 @@
-package br.com.michelsonroncete;
+package entities;
 
 public class Fornecedor {
 
-	private String nomeFantasia;
+	private String id;
 	
-	private String cnpj;
+	private String nomeFantasia;
 	
 	private String endereco;
 
@@ -20,11 +20,11 @@ public class Fornecedor {
 		
 	}
 
-	public Fornecedor(String nomeFantasia, String cnpj
+	public Fornecedor(String id, String nomeFantasia
 		   , String endereco, String email, String site
 		   , String situacao, String tempoEntrega) {
+		this.id = id;
 		this.nomeFantasia = nomeFantasia;
-		this.cnpj = cnpj;
 		this.endereco = endereco;
 		this.email = email;
 		this.site = site;
@@ -33,7 +33,7 @@ public class Fornecedor {
 	}
 	
 	public boolean isNovo() {
-		return cnpj == null;
+		return id == null;
 	}
 
 	public String getNomeFantasia() {
@@ -44,12 +44,12 @@ public class Fornecedor {
 		this.nomeFantasia = nomeFantasia;
 	}
 
-	public String getCnpj() {
-		return cnpj;
+	public String getId() {
+		return id;
 	}
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getEndereco() {
